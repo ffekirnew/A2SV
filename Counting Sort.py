@@ -16,10 +16,10 @@ import sys
 def countingSort(arr):
     index_array = []
     
-    for i in arr:
+    for i in range(100):
         index_array.append(0)
     
-    for in in arr:
+    for num in arr:
         index_array[num] += 1
     
     return index_array
