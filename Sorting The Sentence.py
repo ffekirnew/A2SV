@@ -5,17 +5,10 @@ class Solution(object):
         :rtype: str
         """
         unsorted_list = s.split(" ")
-        index_list = []
-        sorted_string = ""
+        index_list = [index for index in range(1, len(unsorted_list)+1)]
 
-        for i in range(1, len(unsorted_list)+1):
-            index_list.append(i)
+        sorted_string = [k.replace(str(j), '') for j in index_list
+                                               for k in unsorted_list
+                                               if str(j) in k]
 
-        for j in index_list:
-            for k in unsorted_list:
-                if str(j) in k:
-                    sorted_string += k.replace(str(j), '')
-                    if j != index_list[-1]:
-                        sorted_string += " "
-
-        return sorted_string
+        return ' '.join(sorted_string)
